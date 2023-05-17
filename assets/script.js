@@ -58,3 +58,5 @@ function loadQuestion() {
 function handleChoiceSelection(event) {
   if (event.target.matches('li')) {
     const selectedChoiceIndex = parseInt(event.target.getAttribute('data-index
+
+    test this js page by pusing a commit
