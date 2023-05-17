@@ -1,4 +1,5 @@
 // DOM elements
+const timerElement = document.getElementById('time-left');
 const startBtn = document.getElementById('start-btn');
 const questionText = document.getElementById('question-text');
 const choicesList = document.getElementById('choices');
@@ -37,6 +38,20 @@ function startQuiz() {
 
   // Load the first question
   loadQuestion();
+}
+
+function startTimer() {
+  timerElement.textContent = timeLeft;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      endQuiz();
+    }
+  }, 1000);
 }
 
 // Function to load a question
