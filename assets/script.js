@@ -19,7 +19,7 @@ const questions = [
     choices: ["A programming language", "A markup language", "A database language", "A styling language"],
     answer: 0
   },
-  // Add more questions...
+  // I can add more questions here...
 ];
 
 // Event listeners
@@ -40,6 +40,7 @@ function startQuiz() {
   loadQuestion();
 }
 
+//create a function for the timer
 function startTimer() {
   timerElement.textContent = timeLeft;
 
