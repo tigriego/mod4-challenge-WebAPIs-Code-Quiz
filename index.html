@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebAPIs</title>
-  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+<html>
 
+<head>
+  <title>Coding Quiz</title>
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
+
 <body>
-  
+  <header>
+    <h1>Coding Quiz Challenge</h1>
+  </header>
+
+  <main>
+    <section id="start-screen">
+      <h2>Welcome to the Coding Quiz!</h2>
+      <p>Test your JavaScript knowledge. Are you ready?</p>
+      <button id="start-btn">Start Quiz</button>
+    </section>
+
+    <section id="quiz-screen" class="hide">
+      <h2>Question</h2>
+      <p id="question-text"></p>
+      <ul id="choices"></ul>
+    </section>
+
+    <section id="end-screen" class="hide">
+      <h2>Quiz Complete!</h2>
+      <p>Your score: <span id="score"></span></p>
+      <label for="initials">Enter your initials:</label>
+      <input type="text" id="initials">
+      <button id="submit-btn">Submit</button>
+    </section>
+  </main>
+
   <script src="assets/script.js"></script>
 </body>
+
 </html>
