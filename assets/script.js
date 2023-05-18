@@ -6,6 +6,7 @@ const choicesList = document.getElementById('choices');
 const scoreDisplay = document.getElementById('score');
 const initialsInput = document.getElementById('initials');
 const submitBtn = document.getElementById('submit-btn');
+const choiceSelected = 
 
 // Quiz variables
 let currentQuestionIndex = 0;
@@ -14,6 +15,11 @@ let timeLeft = 60;
 
 // Quiz questions
 const questions = [
+  {
+    question: "Question 1: What is JavaScript?",
+    choices: ["A programming language", "A markup language", "A database language", "A styling language"],
+    answer: 0
+  },
   {
     question: "Question 1: What is JavaScript?",
     choices: ["A programming language", "A markup language", "A database language", "A styling language"],
@@ -67,6 +73,7 @@ function loadQuestion() {
     li.textContent = choice;
     li.setAttribute('data-index', index);
     choicesList.appendChild(li);
+    choiceSelected.addEventListener('click', userSelection )
   });
 }
 
@@ -78,3 +85,11 @@ console.log(selectedChoiceIndex)
   }
 
 }
+
+function userSelection {
+
+}
+
+//I need to:
+// create a saveScore function
+// add more questions under questions function as well as corrisponding IDs?
