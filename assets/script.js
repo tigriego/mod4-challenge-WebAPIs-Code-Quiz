@@ -11,7 +11,7 @@ const choiceSelected =
 // Quiz variables
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 60;
+let timeLeft = 75;
 
 // Quiz questions
 const questions = [
@@ -56,7 +56,7 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      endQuiz();
+      endQuiz(); //redirect page to a new highscore.html doc
     }
   }, 1000);
 }
