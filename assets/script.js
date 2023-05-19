@@ -9,7 +9,7 @@ const submitBtn = document.getElementById('submit-btn');
 const choiceSelected = 
 
 // Quiz variables
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 1;
 let score = 0;
 let timeLeft = 75;
 
