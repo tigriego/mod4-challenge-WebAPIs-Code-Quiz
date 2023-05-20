@@ -6,10 +6,10 @@ const choicesList = document.getElementById('choices');
 const scoreDisplay = document.getElementById('score');
 const initialsInput = document.getElementById('initials');
 const submitBtn = document.getElementById('submit-btn');
-const choiceSelected = 
+const choiceSelected = document.getElementById('choices');
 
 // Quiz variables
-let currentQuestionIndex = 1;
+let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 75;
 
