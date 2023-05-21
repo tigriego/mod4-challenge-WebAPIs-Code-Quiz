@@ -27,7 +27,7 @@ const questions = [
   },
   // I can add more questions here...
 ];
-
+//
 // Event listeners
 startBtn.addEventListener('click', startQuiz);
 choicesList.addEventListener('click', handleChoiceSelection);
