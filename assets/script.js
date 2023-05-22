@@ -84,7 +84,7 @@ function userSelection(selectedChoiceIndex) {
 }
 
 function saveScore() {
-  // Implementation goes here
+  
 }
 
 function createHighScoreButton() {
@@ -95,7 +95,7 @@ function createHighScoreButton() {
   button.style.left = '10px';
   document.body.appendChild(button);
   button.addEventListener('click', function () {
-    // Redirect to high scores HTML page
+    
     window.location.href = './assets.newhighscore.html';
   });
 }
