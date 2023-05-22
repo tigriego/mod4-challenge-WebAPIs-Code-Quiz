@@ -70,10 +70,14 @@ function loadQuestion() {
   // Create list items for each choice
   currentQuestion.choices.forEach((choice, index) => {
     const li = document.createElement('li');
-    li.textContent = choice;
-    li.setAttribute('data-index', index);
+    const button = document.createElement('button');
+    button.textContent = choice;
+    li.appendChild(button);
     choicesList.appendChild(li);
-    choiceSelected.addEventListener('click', userSelection )
+
+    button.addEventListener('click', function () {
+      userSelection(index);
+    });
   });
 }
 
@@ -86,9 +90,29 @@ console.log(selectedChoiceIndex)
 
 }
 
-function userSelection {
+function userSelection(selectedChoiceIndex) {
+  const currentQuestion = questions[currentQuestionIndex];
 
+  // Check if the selected choice index matches the correct answer index
+  if (selectedChoiceIndex === currentQuestion.answer) {
+    // Correct answer
+    score++; // Increase the score
+    // You can add more actions here, such as displaying a message or updating the UI
+
+  } else {
+    // Incorrect answer
+    // You can add actions here for an incorrect answer, such as decreasing the time left or displaying a message
+  }
+
+  // Move to the next question
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    loadQuestion(); // Load the next question
+  } else {
+    endQuiz(); // All questions have been answered, end the quiz
+  }
 }
+
 
 //I need to:
 // create a saveScore function
