@@ -54,14 +54,18 @@ function loadQuestion() {
   currentQuestion.choices.forEach((choice, index) => {
     const li = document.createElement('li');
     const button = document.createElement('button');
+    const feedback = document.createElement('span'); // Add this line
+    feedback.classList.add('feedback'); // Add this line
     button.textContent = choice;
     li.appendChild(button);
+    li.appendChild(feedback); // Add this line
     choicesList.appendChild(li);
     button.addEventListener('click', function () {
       userSelection(index);
     });
   });
 }
+
 
 function handleChoiceSelection(event) {
   if (event.target.matches('li')) {
@@ -72,6 +76,22 @@ function handleChoiceSelection(event) {
 
 function userSelection(selectedChoiceIndex) {
   const currentQuestion = questions[currentQuestionIndex];
+  const choices = choicesList.querySelectorAll('li');
+
+  choices.forEach((choice, index) => {
+    const feedback = choice.querySelector('.feedback');
+
+    if (index === selectedChoiceIndex) {
+      if (selectedChoiceIndex === currentQuestion.answer) {
+        feedback.textContent = 'Correct';
+      } else {
+        feedback.textContent = 'Incorrect';
+      }
+    } else {
+      feedback.textContent = '';
+    }
+  });
+
   if (selectedChoiceIndex === currentQuestion.answer) {
     score++;
   }
@@ -82,6 +102,7 @@ function userSelection(selectedChoiceIndex) {
     endQuiz();
   }
 }
+
 
 function saveScore() {
   

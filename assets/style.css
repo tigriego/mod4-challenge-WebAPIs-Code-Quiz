@@ -26,3 +26,9 @@ button {
   top: 20px;
   right: 20px;
 }
+
+.feedback {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
