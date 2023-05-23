@@ -96,7 +96,8 @@ function createHighScoreButton() {
   document.body.appendChild(button);
   button.addEventListener('click', function () {
     
-    window.location.href = './assets.newhighscore.html';
+    window.location.href = './assets/newhighscore.html';
+
   });
 }
 
